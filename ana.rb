@@ -96,7 +96,7 @@ def mainMenu()
                 puts "\nExiting!\n"
                 exit
             else
-                puts "\nIvalid Selection!\n"
+                puts "\nInvalid Selection!\n"
                 # using some recursion that i don't fully grasp at this state, we call the menu structure again
                 # because on the stack and in mmemory it's already created.
                 mainMenu()
