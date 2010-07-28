@@ -60,6 +60,23 @@ anagramPage.scan(pat) { |count,anagram|
     
 end
 
+def getAndParseAnagram()
+   print "Please enter an anagram: "
+   input = gets.chomp
+   if input.empty?
+        puts "\nError: Nothing Entered.\n"
+        exit
+   end
+
+   #Go and fetch the anagram and store it
+   myAnagram = getAnagram(input)
+
+   #Parse and print anagram
+   anagramParse(myAnagram)
+
+end
+
+
 def mainMenu()
     puts
     puts "----------------------------------"
@@ -69,17 +86,21 @@ def mainMenu()
     puts "Enter one of the menu choices"
     puts "\t1. Find Anagrams"
     puts "\t2. Exit"
+    print "Please enter your selection: "
     choice = gets.chomp
-    unless choice == 
         case choice
-        when 1
-        
-        when 2
-            puts "\nExiting!\n"
-            exit
+            when "1"
+                #get anagram, parse it, and print it
+                getAndParseAnagram()
+            when "2"
+                puts "\nExiting!\n"
+                exit
+            else
+                puts "\nIvalid Selection!\n"
+                # using some recursion that i don't fully grasp at this state, we call the menu structure again
+                # because on the stack and in mmemory it's already created.
+                mainMenu()
         end
-         
-
 end
 
 
