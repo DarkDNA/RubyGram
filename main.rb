@@ -1,6 +1,3 @@
-require 'ana.rb'
+require 'ana-class.rb'
 
-#call main menu!
-mainMenu()
-
-#end!
+test = RubyGram.new("beer")
