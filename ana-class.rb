@@ -1,3 +1,5 @@
+require 'socket'
+
 class RubyGram
 
     #initilizer method... initialized with anagram
@@ -36,7 +38,7 @@ class RubyGram
 
     end
 
-    def parseAnagram()
+    def parseAnagram(anagramPage)
 
         pat = /^<b>(\d+) found\. Displaying all:\s*<\/b><br>|\G(?!\A)\s*([\w ]+)<br>/
 
@@ -45,29 +47,25 @@ class RubyGram
         # anagram represents all other capturing groups in this looping/iteration 
         anagramPage.scan(pat) { |count,anagram|
         if count
+            puts
             puts "Results: #{count}"
             puts
         else
             puts anagram
         end
         }
+        
+        puts
 
     end
 
     def getAndParse()
 
-        print "Please enter an anagram: "
-        input = gets.chomp
-        if input.empty?
-             puts "\nError: Nothing Entered.\n"
-             exit
-        end
-
         #Go and fetch the anagram and store it
-        myAnagram = getAnagram(input)
+        myAnagram = getAnagram(@anagram)
 
         #Parse and print anagram
-        anagramParse(myAnagram)
+        parseAnagram(myAnagram)
     end
 
     def mainMenu()
@@ -84,7 +82,7 @@ class RubyGram
              case choice
                  when "1"
                      #get anagram, parse it, and print it
-                     getAndParseAnagram()
+                     getAndParse()
                  when "2"
                      puts "\nExiting!\n"
                      exit
