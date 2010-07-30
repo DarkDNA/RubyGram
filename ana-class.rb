@@ -5,7 +5,8 @@ class RubyGram
     #initilizer method... initialized with anagram
     def initialize(anagram)
 
-        # Server setup stuff
+        # Server setup stuff, setup as instance variables so they are global to that particular
+        # object upon creation
         @anagram = anagram
         @host = 'wordsmith.org'
         @port = 80

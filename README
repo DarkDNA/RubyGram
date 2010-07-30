@@ -1,1 +1,9 @@
-Nothing much here right now.. placeholder
+RubyGram !
+
+This is just a small application I made to get me motivated/started into programing (as well as learning ruby!)
+
+I've been tinkering for years trying to really break into it but have 'failed' a lot in getting serious about it until recently.
+
+Anyway.. what this does is just a small script (that's now OO like) that prompts a user for a word and then submits the HTTP request to wordsmith.com's anagram finder. It then gets the results and parses them out and presents them to the user.
+
+You will notice in obtaining the web page I use raw sockets and HTTP/1.1 commands to do this. You will also notice I parse the result with a method that contains a complicated/tokenized regex. I did this as a learning exercise and I prefer to do things manually when I can.. so i fully grasp what's happening underneath everything. The regex I got a lot of help with from the great folks in #regex on freenode as well as #regex on EfNet.
